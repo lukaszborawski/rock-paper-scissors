@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 10px 20px;
   margin: 25px;
-  border: 2px solid ${({ theme }) => theme.gray};;
+  border: 2px solid ${({ theme }) => theme.gray};
   border-radius: 10px;
 `;
 
@@ -33,7 +33,6 @@ const LogoWrapper = styled.div`
 `;
 
 const Logo = styled.img`
-  display: block;
   width: 100%;
   height: 100%;
 `;
@@ -43,7 +42,7 @@ const ScoreWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: ${({ theme }) => theme.white};
   padding: 5px 15px;
   border-radius: 5px;
 `;
