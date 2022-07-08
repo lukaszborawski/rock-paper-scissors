@@ -6,6 +6,8 @@ import './assets/styles/fonts.css';
 import Header from './components/Header';
 import Rules from './components/Rules';
 import Button from './components/Button';
+import { BrowserRouter } from 'react-router-dom'
+import AnimatedRoutes from './components/AnimatedRoutes';
 
 function App() {
 
@@ -16,6 +18,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Header />
+        <BrowserRouter>
+          <AnimatedRoutes />
+        </BrowserRouter>
         <Button onClick={() => setShowRules(true)}>Rules</Button>
         <Rules showRules={showRules} setShowRules={setShowRules} />
       </ThemeProvider>
