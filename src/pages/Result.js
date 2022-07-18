@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Result = () => {
   return (
-    <Link to={`/game`}>
+    <Link to={`/`}>
       <div>Result</div>
     </Link>
   )

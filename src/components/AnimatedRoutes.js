@@ -6,7 +6,7 @@ import Result from '../pages/Result';
 const AnimatedRoutes = () => {
   return (
     <Routes>
-      <Route path='/game' element={<Game />} />
+      <Route path='/' element={<Game />} />
       <Route path='/result' element={<Result />} />
     </Routes>
   )
