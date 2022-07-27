@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Button = styled.button`
 padding: 8px 35px;
@@ -13,9 +13,18 @@ transition: 0.2s;
 cursor: pointer;
 &:hover {
   color: ${({ theme }) => theme.white};
-  background-color: transparent;
   border: 2px solid ${({ theme }) => theme.white};
 }
+${({ secondaryBtn }) =>
+    secondaryBtn &&
+    css`
+      padding: 10px 50px;
+      color: ${({ theme }) => theme.darkgray};
+      background-color: ${({ theme }) => theme.white};
+      &:hover {
+        color: hsl(349, 70%, 56%);
+      }
+    `}
 `;
 
 export default Button;
