@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { GameContext } from '../providers/GameProvider';
 import styled, { css } from 'styled-components';
 import rockIcon from '../assets/icons/rock.svg'
 import paperIcon from '../assets/icons/paper.svg'
 import scissorsIcon from '../assets/icons/scissors.svg'
 
 const Option = ({ type }) => {
+  const { setUserChoice } = useContext(GameContext);
+
+  const handleClick = () => {
+    setUserChoice(type)
+  }
+
   return (
-    <Button type={type}>
+    <Button onClick={handleClick} type={type}>
       <InnerBackground>
         <Icon />
       </InnerBackground>
@@ -17,7 +24,6 @@ const Option = ({ type }) => {
 export default Option;
 
 const Button = styled.div`
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,8 +35,6 @@ const Button = styled.div`
   ${({ type }) =>
     type === 'rock' &&
     css`
-      top: -20px;
-      left: -30px;
 			background: ${({ theme }) => theme.rock};
       ${Icon} {
         background-image: url(${rockIcon});
@@ -39,8 +43,6 @@ const Button = styled.div`
   ${({ type }) =>
     type === 'paper' &&
     css`
-      top: -20px;
-      right: -30px;
       background: ${({ theme }) => theme.paper};
       ${Icon} {
         background-image: url(${paperIcon});
@@ -49,9 +51,6 @@ const Button = styled.div`
   ${({ type }) =>
     type === 'scissors' &&
     css`
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
       background: ${({ theme }) => theme.scissors};
       ${Icon} {
         background-image: url(${scissorsIcon});

@@ -8,6 +8,7 @@ import GlobalStyle from './assets/styles/GlobalStyle';
 import Header from './components/Header';
 import AnimatedRoutes from './components/AnimatedRoutes';
 import Footer from './components/Footer';
+import GameProvider from './providers/GameProvider';
 
 function App() {
   return (
@@ -15,13 +16,15 @@ function App() {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Wrapper>
-          <Content>
-            <Header />
-            <BrowserRouter>
-              <AnimatedRoutes />
-            </BrowserRouter>
-            <Footer />
-          </Content>
+          <GameProvider>
+            <Content>
+              <Header />
+              <BrowserRouter>
+                <AnimatedRoutes />
+              </BrowserRouter>
+              <Footer />
+            </Content>
+          </GameProvider>
         </Wrapper>
       </ThemeProvider>
     </>
