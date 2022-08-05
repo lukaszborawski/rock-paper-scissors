@@ -31,12 +31,20 @@ const Result = () => {
 
   return (
     <Wrapper>
-      <Option type={userChoice} />
-      <TitleResult>{gameResult}</TitleResult>
-      <Link to={`/`}>
-        <Button secondaryBtn>play again</Button>
-      </Link>
-      <Option type={houseChoice} />
+      <OptionWrapper>
+        <Option type={userChoice} />
+        <OptionTitle>you picked</OptionTitle>
+      </OptionWrapper>
+      <ResultWrapper>
+        <TitleResult>{gameResult === 'draw' ? gameResult : `You ${gameResult}`}</TitleResult>
+        <Link to={`/`}>
+          <Button secondaryBtn>play again</Button>
+        </Link>
+      </ResultWrapper>
+      <OptionWrapper>
+        <Option type={houseChoice} />
+        <OptionTitle>the house picked</OptionTitle>
+      </OptionWrapper>
     </Wrapper>
   )
 }
@@ -45,10 +53,38 @@ export default Result;
 
 const Wrapper = styled.div`
   display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 100px 0;
+`;
+
+const OptionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+`;
+
+const OptionTitle = styled.span`
+  color: ${({ theme }) => theme.white};
+  text-transform: uppercase;
+  margin-top: 10px;
+`;
+
+const ResultWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 40px;
+  order: 1;
+  width: 100%;
 `;
 
 const TitleResult = styled.h2`
   color: ${({ theme }) => theme.white};
   text-transform: uppercase;
+  margin: 10px 0;
 `;
+
+

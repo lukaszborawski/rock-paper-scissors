@@ -26,7 +26,7 @@ export default Game;
 
 const Wrapper = styled.div`
   position: relative;
-  margin: 150px auto;
+  margin: 100px auto;
   width: 230px;
   height: 230px;
   background: url(${triangle}) no-repeat center;
