@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { GameContext } from '../providers/GameProvider'
 import styled from 'styled-components'
 import logo from '../assets/icons/logo.svg'
 
 const Header = () => {
+  const { score } = useContext(GameContext);
+
   return (
     <Wrapper>
       <LogoWrapper>
@@ -10,7 +13,7 @@ const Header = () => {
       </LogoWrapper>
       <ScoreWrapper>
         <ScoreTitle>Score</ScoreTitle>
-        <Score>12</Score>
+        <Score>{score}</Score>
       </ScoreWrapper>
     </Wrapper>
   )

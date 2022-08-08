@@ -6,7 +6,7 @@ import Button from '../components/Button'
 import Option from '../components/Option';
 
 const Result = () => {
-  const { userChoice } = useContext(GameContext);
+  const { userChoice, score, setScore } = useContext(GameContext);
   const [houseChoice, setHouseChoice] = useState("");
   const [gameResult, setGameResult] = useState("");
 
@@ -16,14 +16,17 @@ const Result = () => {
     const houseDraw = options[Math.floor(Math.random() * options.length)]
     if (userChoice === houseDraw) {
       setGameResult("draw")
+      setScore(score)
     } else if (
       (userChoice === "rock" && houseDraw === "scissors") ||
       (userChoice === "paper" && houseDraw === "rock") ||
       (userChoice === "scissors" && houseDraw === "paper")
     ) {
       setGameResult("win")
+      setScore(score + 1)
     } else {
       setGameResult("lose")
+      setScore(score - 1)
     }
     setHouseChoice(houseDraw);
     // eslint-disable-next-line react-hooks/exhaustive-deps
