@@ -6,7 +6,7 @@ import Button from '../components/Button'
 import Option from '../components/Option';
 
 const Result = () => {
-  const { userChoice, score, setScore } = useContext(GameContext);
+  const { userChoice, setUserChoice, score, setScore } = useContext(GameContext);
   const [houseChoice, setHouseChoice] = useState("");
   const [gameResult, setGameResult] = useState("");
 
@@ -41,7 +41,7 @@ const Result = () => {
       <ResultWrapper>
         <TitleResult>{gameResult === 'draw' ? gameResult : `You ${gameResult}`}</TitleResult>
         <Link to={`/`}>
-          <Button secondaryBtn>play again</Button>
+          <Button onClick={() => setUserChoice("")} secondaryBtn>play again</Button>
         </Link>
       </ResultWrapper>
       <OptionWrapper>
