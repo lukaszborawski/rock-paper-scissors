@@ -6,10 +6,12 @@ import paperIcon from '../assets/icons/paper.svg'
 import scissorsIcon from '../assets/icons/scissors.svg'
 
 const Option = ({ type }) => {
-  const { setUserChoice } = useContext(GameContext);
+  const { userChoice, setUserChoice } = useContext(GameContext);
 
   const handleClick = () => {
-    setUserChoice(type)
+    if (!userChoice) {
+      setUserChoice(type)
+    }
   }
 
   return (
