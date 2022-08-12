@@ -31,6 +31,14 @@ const Wrapper = styled.div`
   height: 230px;
   background: url(${triangle}) no-repeat center;
   background-size: 100%;
+  ${({ theme }) => theme.breakpoints.md} {
+    width: 270px;
+    height: 270px;
+  }
+  ${({ theme }) => theme.breakpoints.lg} {
+    width: 300px;
+    height: 300px;
+  }
 `;
 
 const InnerWrapper = styled.div`

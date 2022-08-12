@@ -59,6 +59,13 @@ const Wrapper = styled.div`
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin: 100px 0;
+  height: 230px;
+  ${({ theme }) => theme.breakpoints.lg} {
+    height: 270px;
+  }
+  ${({ theme }) => theme.breakpoints.lg} {
+    height: 300px;
+  }
 `;
 
 const OptionWrapper = styled.div`
@@ -72,6 +79,9 @@ const OptionTitle = styled.span`
   color: ${({ theme }) => theme.white};
   text-transform: uppercase;
   margin-top: 10px;
+  ${({ theme }) => theme.breakpoints.lg} {
+    font-size: 20px;
+  }
 `;
 
 const ResultWrapper = styled.div`
@@ -88,6 +98,9 @@ const TitleResult = styled.h2`
   color: ${({ theme }) => theme.white};
   text-transform: uppercase;
   margin: 10px 0;
+  ${({ theme }) => theme.breakpoints.lg} {
+    font-size: 32px;
+  }
 `;
 
 

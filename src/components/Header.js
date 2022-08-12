@@ -32,7 +32,10 @@ const Wrapper = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-  height: 50px;
+  height: 55px;
+  ${({ theme }) => theme.breakpoints.lg} {
+    height: 65px;
+  }
 `;
 
 const Logo = styled.img`
@@ -55,11 +58,17 @@ const ScoreTitle = styled.h2`
   letter-spacing: 1px;
   color: ${({ theme }) => theme.blue};
   text-transform: uppercase;
+  ${({ theme }) => theme.breakpoints.lg} {
+    font-size: 15px;
+  }
 `;
 
 const Score = styled.span`
   font-size: 30px;
   color: ${({ theme }) => theme.darkgray};
   font-weight: bold;
+  ${({ theme }) => theme.breakpoints.lg} {
+    font-size: 35px;
+  }
 `;
 

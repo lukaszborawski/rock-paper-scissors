@@ -33,6 +33,14 @@ const Button = styled.div`
   height: 100px;
   border-radius: 50%;
   box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.25);
+  ${({ theme }) => theme.breakpoints.md} {
+    width: 115px;
+    height: 115px;
+  }
+  ${({ theme }) => theme.breakpoints.lg} {
+    width: 130px;
+    height: 130px;
+  }
   
   ${({ type }) =>
     type === 'rock' &&
@@ -71,8 +79,8 @@ const InnerBackground = styled.div`
   box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.25);
 `;
 const Icon = styled.div`
-width: 100%;
-height: 100%;
-background: no-repeat center;
-background-size: 55%;
+  width: 100%;
+  height: 100%;
+  background: no-repeat center;
+  background-size: 55%;
 `;

@@ -25,6 +25,9 @@ ${({ secondaryBtn }) =>
         color: hsl(349, 70%, 56%);
       }
     `}
+${({ theme }) => theme.breakpoints.lg} {
+    font-size: 16px;
+  }
 `;
 
 export default Button;
