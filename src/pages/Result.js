@@ -26,7 +26,9 @@ const Result = () => {
       setScore(score + 1)
     } else {
       setGameResult("lose")
-      setScore(score - 1)
+      if (score > 0) {
+        setScore(score - 1)
+      }
     }
     setHouseChoice(houseDraw);
     // eslint-disable-next-line react-hooks/exhaustive-deps
