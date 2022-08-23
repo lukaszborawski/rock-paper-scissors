@@ -37,7 +37,10 @@ const Result = () => {
   return (
     <Wrapper>
       <OptionWrapper>
-        <Option type={userChoice} />
+        <InnerWrapper>
+          <ShadowEffect isActive={gameResult === "win"} />
+          <Option type={userChoice} />
+        </InnerWrapper>
         <OptionTitle>you picked</OptionTitle>
       </OptionWrapper>
       <ResultWrapper>
@@ -47,7 +50,10 @@ const Result = () => {
         </Link>
       </ResultWrapper>
       <OptionWrapper>
-        <Option type={houseChoice} />
+        <InnerWrapper>
+          <ShadowEffect isActive={gameResult === "lose"} />
+          <Option type={houseChoice} />
+        </InnerWrapper>
         <OptionTitle>the house picked</OptionTitle>
       </OptionWrapper>
     </Wrapper>
@@ -62,7 +68,7 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   margin: 100px 0;
   height: 230px;
-  ${({ theme }) => theme.breakpoints.lg} {
+  ${({ theme }) => theme.breakpoints.md} {
     height: 270px;
   }
   ${({ theme }) => theme.breakpoints.lg} {
@@ -75,6 +81,58 @@ const OptionWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 1;
+  `;
+
+const InnerWrapper = styled.div`
+    position: relative;
+  `;
+
+const ShadowEffect = styled.div`
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  z-index: -1;
+  ${({ theme }) => theme.breakpoints.md} {
+    width: 115px;
+    height: 115px;
+  }
+  ${({ theme }) => theme.breakpoints.lg} {
+    width: 130px;
+    height: 130px;
+  }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: ${({ isActive }) => (isActive ? '1' : '0')};
+    box-shadow: 0 0 0 15px hsla(0, 0%, 100%, 0.04);
+    border-radius: 50%; 
+    transition: 0.3 ease;
+    transition-delay: 0.35s;
+    ${({ theme }) => theme.breakpoints.md} {
+    width: 115px;
+    height: 115px;
+    }
+    ${({ theme }) => theme.breakpoints.lg} {
+    width: 130px;
+    height: 130px;
+    }
+  };
+  &::after {
+    box-shadow: 0 0 0 35px hsla(0, 0%, 100%, 0.03), 0 0 0 65px hsla(0, 0%, 100%, 0.02);
+    transition-delay: 0.45s;
+  };
 `;
 
 const OptionTitle = styled.span`
