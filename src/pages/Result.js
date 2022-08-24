@@ -123,15 +123,23 @@ const ShadowEffect = styled.div`
     ${({ theme }) => theme.breakpoints.md} {
     width: 115px;
     height: 115px;
+    box-shadow: 0 0 0 25px hsla(0, 0%, 100%, 0.04);
     }
     ${({ theme }) => theme.breakpoints.lg} {
     width: 130px;
     height: 130px;
+    box-shadow: 0 0 0 35px hsla(0, 0%, 100%, 0.04);
     }
   };
   &::after {
     box-shadow: 0 0 0 35px hsla(0, 0%, 100%, 0.03), 0 0 0 65px hsla(0, 0%, 100%, 0.02);
     transition-delay: 0.45s;
+    ${({ theme }) => theme.breakpoints.md} {
+      box-shadow: 0 0 0 45px hsla(0, 0%, 100%, 0.03), 0 0 0 75px hsla(0, 0%, 100%, 0.02);
+    }
+    ${({ theme }) => theme.breakpoints.lg} {
+      box-shadow: 0 0 0 55px hsla(0, 0%, 100%, 0.03), 0 0 0 85px hsla(0, 0%, 100%, 0.02);
+    }
   };
 `;
 
@@ -140,7 +148,7 @@ const OptionTitle = styled.span`
   text-transform: uppercase;
   margin-top: 10px;
   ${({ theme }) => theme.breakpoints.lg} {
-    font-size: 20px;
+    font-size: 23px;
   }
 `;
 
