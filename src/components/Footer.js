@@ -23,6 +23,5 @@ const Wrapper = styled.div`
   justify-content: center;
   ${({ theme }) => theme.breakpoints.md} {
     justify-content: right;
-    margin-right: 25px;
   }
 `;

@@ -43,4 +43,5 @@ const Wrapper = styled.div`
 const Content = styled.div`
   width: 100%;
   max-width: 1300px;
+  padding: 25px;
 `

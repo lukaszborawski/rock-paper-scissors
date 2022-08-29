@@ -26,7 +26,6 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  margin: 25px;
   border: 2px solid ${({ theme }) => theme.gray};
   border-radius: 10px;
 `;

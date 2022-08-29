@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { GameContext } from '../providers/GameProvider';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../components/Button'
 import Option from '../components/Option';
@@ -11,6 +11,7 @@ const Result = () => {
   const [gameResult, setGameResult] = useState("");
 
   const options = ["rock", "paper", "scissors"];
+  const navigate = useNavigate();
 
   useEffect(() => {
     const houseDraw = options[Math.floor(Math.random() * options.length)]
@@ -34,6 +35,11 @@ const Result = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const handleClick = () => {
+    setUserChoice("")
+    navigate('/', { replace: true });
+  }
+
   return (
     <Wrapper>
       <OptionWrapper>
@@ -45,9 +51,7 @@ const Result = () => {
       </OptionWrapper>
       <ResultWrapper>
         <TitleResult>{gameResult === 'draw' ? gameResult : `You ${gameResult}`}</TitleResult>
-        <Link to={`/`}>
-          <Button onClick={() => setUserChoice("")} secondaryBtn>play again</Button>
-        </Link>
+        <Button onClick={handleClick} secondaryBtn>play again</Button>
       </ResultWrapper>
       <OptionWrapper>
         <InnerWrapper>
@@ -95,7 +99,7 @@ const ShadowEffect = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.2);
+  background: hsla(0, 0%, 0%, 0.2);
   border-radius: 50%;
   z-index: -1;
   ${({ theme }) => theme.breakpoints.md} {
