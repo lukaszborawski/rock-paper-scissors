@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import styled from 'styled-components';
 import Rules from './Rules';
 import Button from './Button';
 
@@ -21,6 +21,7 @@ export default Footer;
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+  margin: 5px 0;
   ${({ theme }) => theme.breakpoints.md} {
     justify-content: right;
   }

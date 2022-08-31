@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import rulesImage from '../assets/icons/rules.svg'
-import closeIcon from '../assets/icons/close.svg'
+import React from 'react';
+import styled from 'styled-components';
+import rulesImage from '../assets/icons/rules.svg';
+import closeIcon from '../assets/icons/close.svg';
 
 const Rules = ({ showRules, setShowRules }) => {
   return (

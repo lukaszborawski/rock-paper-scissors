@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
 import { GameContext } from '../providers/GameProvider';
 import styled, { css } from 'styled-components';
-import rockIcon from '../assets/icons/rock.svg'
-import paperIcon from '../assets/icons/paper.svg'
-import scissorsIcon from '../assets/icons/scissors.svg'
+import rockIcon from '../assets/icons/rock.svg';
+import paperIcon from '../assets/icons/paper.svg';
+import scissorsIcon from '../assets/icons/scissors.svg';
 
 const Option = ({ type }) => {
   const { userChoice, setUserChoice } = useContext(GameContext);
@@ -34,12 +34,12 @@ const Button = styled.div`
   border-radius: 50%;
   box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.25);
   ${({ theme }) => theme.breakpoints.md} {
-    width: 115px;
-    height: 115px;
-  }
-  ${({ theme }) => theme.breakpoints.lg} {
     width: 130px;
     height: 130px;
+  }
+  ${({ theme }) => theme.breakpoints.lg} {
+    width: 150px;
+    height: 150px;
   }
   
   ${({ type }) =>
@@ -48,15 +48,15 @@ const Button = styled.div`
 			background: ${({ theme }) => theme.rock};
       ${Icon} {
         background-image: url(${rockIcon});
-      };
-		`};
+      }
+		`}
   ${({ type }) =>
     type === 'paper' &&
     css`
       background: ${({ theme }) => theme.paper};
       ${Icon} {
         background-image: url(${paperIcon});
-      };
+      }
     `}
   ${({ type }) =>
     type === 'scissors' &&
@@ -64,7 +64,7 @@ const Button = styled.div`
       background: ${({ theme }) => theme.scissors};
       ${Icon} {
         background-image: url(${scissorsIcon});
-      };
+      }
     `}
 `;
 
