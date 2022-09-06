@@ -1,6 +1,6 @@
 
 # Rock, Paper, Scissors
-It's a game made with React that let's you play against the computer.
+It's a game made with React that lets you play against the computer.
 
 ![rps](https://user-images.githubusercontent.com/59935570/188239684-0ea0d179-3164-4282-b090-b0b051ea2b36.jpg)
 
@@ -21,6 +21,7 @@ Users are be able to:
 ## Used Technologies
 
 - React
+- React Router
 - Styled Components
 - Framer Motion
 - Local Storage
